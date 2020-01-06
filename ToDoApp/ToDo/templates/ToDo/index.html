@@ -4,11 +4,17 @@
 <div class="row mt-4">
   <div class="col">
     <h2>Add Item</h2>
-    <form class="form-inline">
+    <form
+      action="{% url 'todo:add_todo' %}" 
+      method="post"
+      class="form-inline"
+    >
+    {% csrf_token %}
       <input 
         type="text" 
         class="form-control mb-2 mr-sm-2" 
         placeholder="type here..."
+        name="text"
       >
       <button
         type="submit"
@@ -19,14 +25,29 @@
 </div>
 <div class="row mt-4">
   <div class="col">
+    {% if todo_list %}
     <ul class="list-group">
+      {% for item in todo_list %}
       <li class="list-group-item">
-        Item
+        {{ item }}
+        <div class="float-right">
+          <form 
+            action="delete_todo/{{item.id}}"
+            method="post"
+          >
+          {% csrf_token %}
+            <button
+              type="submit"
+              class=" btn btn-sm btn-danger"
+            >Delete</button>
+          </form>
+        </div>
       </li>
-      <li class="list-group-item">
-        Item
-      </li>
+      {% endfor %}
     </ul>
+    {% else %}
+      <p>Create your first To Do Item.</p>
+    {% endif %}
   </div>
 </div>
 {% endblock content %}
