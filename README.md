@@ -1,6 +1,7 @@
 # ToDoApp_Django
 
 This is a small To DO App I builted with [Django](https://www.djangoproject.com/) to practise my web developing skills.
+you can see this project online at https://fierce-plateau-86670.herokuapp.com/
 
 ## Prerequisites:
 * PostgreSQL
