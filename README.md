@@ -1,6 +1,6 @@
 # ToDoApp_Django
 
-This is a small To DO App I builted with [Django](https://www.djangoproject.com/) for to practise my web developing skills.
+This is a small To DO App I builted with [Django](https://www.djangoproject.com/) to practise my web developing skills.
 
 ## Prerequisites:
 * PostgreSQL
