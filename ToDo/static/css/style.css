@@ -2,3 +2,7 @@ a[name="title"] {
     color: white;
     text-decoration: none;
 }
+
+.delete_button {
+    border-radius: 50%;
+}
