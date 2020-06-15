@@ -2,6 +2,8 @@
 
 This is a small To Do App I built with [Django](https://www.djangoproject.com/) to practise my web developing skills.
 
+you can check an example at [this link](https://talvarez2todoapp.herokuapp.com/)
+
 ## Prerequisites:
 * PostgreSQL
   * you will need a database with name and user/password as configured in `ToDoApp/settings.py`
