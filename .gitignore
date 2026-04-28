@@ -1,2 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
 Pipfile
 Pipfile.lock
+
+# Django
+db.sqlite3
+*.log
+staticfiles/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+Thumbs.db

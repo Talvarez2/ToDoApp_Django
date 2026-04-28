@@ -1,9 +1,9 @@
 from django.db import models
 
-class Todo(models.Model):
 
-    added_date = models.DateTimeField()
+class Todo(models.Model):
     text = models.CharField(max_length=200)
+    added_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.text

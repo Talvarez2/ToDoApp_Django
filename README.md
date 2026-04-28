@@ -1,27 +1,60 @@
-# ToDoApp_Django
+# ToDoApp Django
 
-This is a small To Do App I built with [Django](https://www.djangoproject.com/) to practise my web developing skills.
+A simple To Do application built with [Django](https://www.djangoproject.com/).
 
-you can check an example at [this link](https://talvarez2todoapp.herokuapp.com/)
+## Prerequisites
 
-## Prerequisites:
-* PostgreSQL
-  * you will need a database with name and user/password as configured in `ToDoApp/settings.py`
-* python3
-* Django
+- Python 3.6+
+- pip
 
-## Project Setup
+## Setup
 
-### Run migrations
 ```sh
-python manage.py makemigrations
+# Create and activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
 python manage.py migrate
-```
 
-## Run the app!
-
-```sh
+# Start the development server
 python manage.py runserver
 ```
 
-Now go to http://localhost:8000 and start browsing :)
+Visit http://localhost:8000 to use the app.
+
+## Configuration
+
+All settings are configurable via environment variables:
+
+| Variable | Default | Description |
+|---|---|---|
+| `DJANGO_SECRET_KEY` | dev-only key | Secret key for cryptographic signing |
+| `DJANGO_DEBUG` | `True` | Enable/disable debug mode |
+| `DJANGO_ALLOWED_HOSTS` | `localhost,127.0.0.1` | Comma-separated allowed hosts |
+| `DB_ENGINE` | `django.db.backends.sqlite3` | Database backend |
+| `DB_NAME` | `db.sqlite3` | Database name/path |
+| `DB_USER` | _(empty)_ | Database user |
+| `DB_PASSWORD` | _(empty)_ | Database password |
+| `DB_HOST` | _(empty)_ | Database host |
+| `DB_PORT` | _(empty)_ | Database port |
+
+For production, set `DJANGO_SECRET_KEY` to a strong random value and `DJANGO_DEBUG=False`.
+
+### Using PostgreSQL
+
+```sh
+export DB_ENGINE=django.db.backends.postgresql
+export DB_NAME=todo_app
+export DB_USER=your_user
+export DB_PASSWORD=your_password
+export DB_HOST=localhost
+export DB_PORT=5432
+```
+
+## Deployment
+
+The app includes a `Procfile` for Heroku deployment with gunicorn and whitenoise for static files.
